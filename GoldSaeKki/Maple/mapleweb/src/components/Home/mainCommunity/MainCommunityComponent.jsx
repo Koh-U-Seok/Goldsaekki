@@ -34,7 +34,6 @@ const MainCommunityComponent = ({
           </div>
           <div className="mainCommunity_innerBox_community_list">
             {communityNewestPost.map((item, index) => {
-              console.log(communityNewestPost);
               return (
                 <div
                   className="mainCommunity_innerBox_community_item_cover"
