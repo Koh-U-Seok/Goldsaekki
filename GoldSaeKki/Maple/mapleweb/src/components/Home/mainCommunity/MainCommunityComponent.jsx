@@ -34,6 +34,7 @@ const MainCommunityComponent = ({
           </div>
           <div className="mainCommunity_innerBox_community_list">
             {communityNewestPost.map((item, index) => {
+              console.log(communityNewestPost);
               return (
                 <div
                   className="mainCommunity_innerBox_community_item_cover"
@@ -111,14 +112,14 @@ const MainCommunityComponent = ({
                             "mainCommunity_innerBox_community_item_bottom_innerBox_userName"
                           }
                         >
-                          {item?.user_name}
+                          {item?.userName}
                         </span>
                         <span
                           className={
                             "mainCommunity_innerBox_community_item_bottom_innerBox_createdAt"
                           }
                         >
-                          {item?.created_at}
+                          {item?.createdAt}
                         </span>
                       </div>
                     </div>
@@ -161,9 +162,7 @@ const MainCommunityComponent = ({
                   key={`mainCommunity_innerBox_ranking_avatar_${index + 1}`}
                 >
                   <Link to="/Ranking" element={<RankComponent />}>
-                    <img
-                      src={`/api/download${item.profileImg}`}
-                    />
+                    <img src={`/api/download${item.profileImg}`} />
                   </Link>
                 </div>
               );

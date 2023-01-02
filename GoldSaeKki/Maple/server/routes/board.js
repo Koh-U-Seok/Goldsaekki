@@ -224,34 +224,32 @@ router.post("/getLikeSevenBoards", async (req, res) => {
 router.post("/mainCommunity", async (req, res) => {
   try {
     const resultFree = await db.Board.findOne({
-      where : {
-        category :"자유게시판",
-
+      where: {
+        category: "자유게시판",
       },
-      order :[["createdAt","DESC"]]
+      order: [["createdAt", "DESC"]],
     });
     const resultInfo = await db.Board.findOne({
-      where : {
-        category :"정보게시판"
+      where: {
+        category: "정보게시판",
       },
-      order :[["createdAt","DESC"]]
+      order: [["createdAt", "DESC"]],
     });
     const resultTopic = await db.Board.findOne({
-      where : {
-        category :"토론게시판"
+      where: {
+        category: "토론게시판",
       },
-      order :[["createdAt","DESC"]]
+      order: [["createdAt", "DESC"]],
     });
     const resultNovel = await db.Board.findOne({
-      where : {
-        category :"연재소설"
+      where: {
+        category: "연재소설",
       },
-      order :[["createdAt","DESC"]]
+      order: [["createdAt", "DESC"]],
     });
-
     res.send({
       status: 200,
-      result: [resultFree, resultInfo, resultTopic,resultNovel],
+      result: [resultFree, resultInfo, resultTopic, resultNovel],
     });
   } catch (error) {
     console.error(error);
@@ -293,12 +291,3 @@ fs.readFile("./board.json", "utf-8", async function (err, data) {
 });
 
 export default router;
-
-
-
-
-
-
-
-
-
